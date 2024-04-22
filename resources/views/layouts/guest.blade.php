@@ -24,6 +24,7 @@
                     <a href="/">{{ config('app.name', 'Laravel') }}</a>
                 </div>
                 <div class="nav flex">
+                    <a href="{{ route('contact') }}" class="p-4 block">Contact</a>
                     <a href="/login" class="p-4 block">Login</a>
                     <a href="/register" class="p-4 block bg-blue-600 rounded hover:bg-blue-800">Register</a>
                 </div>
