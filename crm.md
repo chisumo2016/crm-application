@@ -71,3 +71,5 @@
     php artisan make:livewire business.register
     https://jetstream.laravel.com/stacks/livewire.html
     https://livewire.laravel.com/docs/events#dispatching-events
+
+# REGISTER STEPS LIVEWIRE WIZARD 
