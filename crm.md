@@ -18,3 +18,47 @@
     <a href="{{ route('leads.edit', $lead->id ) }}">Edit</a>
     <a href="{{ route('leads.edit', ['id' => $lead->id] ) }}">Edit</a>
     <a href="{{ route('leads.edit', ['lead' => $lead->id] ) }}">Edit</a>
+
+# ER DIAGRAM FOR Saas CRM
+    users
+        .id
+        .name
+        .email
+    business_user
+        bussinessId
+        userId
+    business
+        .id
+         .name
+         .planId
+
+    Roles  
+        .id
+        .name
+    user_role
+        .id
+        .userId
+        .roleId
+    permissions
+        .id
+        .name
+    plans
+        .name
+        .features
+        .price
+        .id
+    
+    permission_plan
+        .id
+        .planeId
+        .permissionId   
+    permission_role
+        .id
+        .roleId
+        .permissionId
+    
+# SAAS PLANS SEEDER MIGRATION , VIEW
+    php artisan make:model Plan -mrc
+    php artisan make:seeder PlanSeeder
+    php artisan db:seed --class=PlanSeeder
+

@@ -3,11 +3,11 @@
 use App\Http\Controllers\LeadController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-
+Route::resource('/', \App\Http\Controllers\PlanController::class);
 
 
 Route::view('contact', 'contact')->name('contact');
@@ -24,4 +24,5 @@ Route::middleware([
 
     /*Leads Route**/
     Route::resource('leads', LeadController::class);
+
 });
