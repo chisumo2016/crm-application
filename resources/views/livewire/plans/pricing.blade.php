@@ -1,9 +1,9 @@
 <div class="py-12 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
-            @if($selectedPlan)
-                selected:  {{ $selectedPlan->id }}   {{ $selectedPlan->name }}
-            @endif
+{{--            @if($selectedPlan)--}}
+{{--                selected:  {{ $selectedPlan->id }}   {{ $selectedPlan->name }}--}}
+{{--            @endif--}}
         </div>
         <div class="lg:text-center">
             <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Plans & Pricing</h2>

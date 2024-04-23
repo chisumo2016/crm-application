@@ -19,7 +19,7 @@
         </div>
     </div>
 
-@livewire('plans-pricing')
+@livewire('plans.pricing')
 
 
 </x-guest-layout>

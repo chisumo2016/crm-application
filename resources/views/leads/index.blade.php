@@ -34,6 +34,5 @@
                 document.getElementById( leadId).submit();
             }
         }
-
     </script>
 </x-app-layout>

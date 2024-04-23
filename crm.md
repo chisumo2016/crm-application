@@ -64,4 +64,10 @@
     php artisan db:seed --class=PlanSeeder
 
 # LIVEWIRE COMPOONENT FOR PLAN
-    php artisan make:livewire plans-pricing
+    php artisan make:livewire plans.pricing
+
+# LIVEWIRE EVENTS AND MODAL
+    https://livewire.laravel.com/docs/events
+    php artisan make:livewire business.register
+    https://jetstream.laravel.com/stacks/livewire.html
+    https://livewire.laravel.com/docs/events#dispatching-events

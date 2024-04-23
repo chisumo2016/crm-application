@@ -38,6 +38,7 @@
                 &copy; copyright
             </div>
         </footer>
+        @livewire('business.register')
 
         @livewireScripts
     </body>
