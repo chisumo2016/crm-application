@@ -59,6 +59,9 @@
     
 # SAAS PLANS SEEDER MIGRATION , VIEW
     php artisan make:model Plan -mrc
+    php artisan migrate
     php artisan make:seeder PlanSeeder
     php artisan db:seed --class=PlanSeeder
 
+# LIVEWIRE COMPOONENT FOR PLAN
+    php artisan make:livewire plans-pricing
