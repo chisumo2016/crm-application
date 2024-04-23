@@ -56,7 +56,7 @@ class LeadController extends Controller
      */
     public function edit(Lead $lead)
     {
-        //
+        return view('leads.edit' , compact('lead'));
     }
 
     /**
@@ -64,7 +64,19 @@ class LeadController extends Controller
      */
     public function update(Request $request, Lead $lead)
     {
-        //
+        $validated =  $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name'  => 'required|string|max:255',
+            'email'      => 'required|email|max:255',
+            'phone'      => 'nullable|string',
+            'company'    => 'required|string|max:255',
+            'status'     => 'required|in:new,contacted,converted',
+            'notes'      => 'nullable|string',
+        ]);
+
+        $lead->update($validated);
+
+        return redirect()->route('leads.index', $lead);
     }
 
     /**
@@ -72,6 +84,7 @@ class LeadController extends Controller
      */
     public function destroy(Lead $lead)
     {
-        //
+        $lead->delete();
+        return redirect()->route('leads.index', $lead);
     }
 }
