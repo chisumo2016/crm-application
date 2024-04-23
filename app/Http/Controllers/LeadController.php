@@ -12,7 +12,8 @@ class LeadController extends Controller
      */
     public function index()
     {
-        return view('leads.index');
+        $leads = Lead::paginate(10);
+        return view('leads.index', compact('leads'));
 ;    }
 
     /**
@@ -20,7 +21,7 @@ class LeadController extends Controller
      */
     public function create()
     {
-        //
+        return view('leads.create');
     }
 
     /**
@@ -28,7 +29,18 @@ class LeadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated =  $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name'  => 'required|string|max:255',
+            'email'      => 'required|email|max:255',
+            'phone'      => 'nullable|string',
+            'company'    => 'required|string|max:255',
+            'status'     => 'required|in:new,contacted,converted',
+            'notes'      => 'nullable|string',
+        ]);
+        $lead = Lead::create($validated);
+
+        return redirect()->route('leads.index', $lead);
     }
 
     /**

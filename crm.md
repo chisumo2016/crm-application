@@ -10,3 +10,6 @@
 # CREATE MODEL VIEW  CONTROLLER
             https://laravel.com/docs/11.x/migrations#main-content
         php artisan make:model Lead -mrc
+
+# CREATE VALIDATE  READ /LIST
+        https://laravel.com/docs/11.x/validation
