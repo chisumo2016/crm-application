@@ -6,16 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Plan extends Model
+class Role extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
+    protected $fillable  = [
         'name',
-        'description',
-        'price',
-        'interval',
-        'trial_period_days',
+        'business_id',
+        /*'role_id',
+        'user_id',*/
     ];
 
     public function permissions():BelongsToMany

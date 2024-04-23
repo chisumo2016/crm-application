@@ -76,3 +76,21 @@
     UII
 # REGISTER  VALIDATIONS  FOR BUSINESS /USER 
     Validation each steps 
+
+# BUSINESS  USER SIGUP MODEL MIGRATION RELATION
+    php artisan make:model Business -m
+    php artisan make:migration create_business_user_pivot_table
+    php artisan make:model Role -m
+    php artisan make:model Permission -m
+        
+
+    modified:   app/Livewire/Business/Register.php
+	modified:   app/Models/Plan.php
+	modified:   app/Models/User.php
+
+    app/Models/Business.php
+	app/Models/Permission.php
+	app/Models/Role.php
+	database/migrations/2024_04_23_161827_create_businesses_table.php
+	database/migrations/2024_04_23_183253_create_roles_table.php
+	database/migrations/2024_04_23_183343_create_permissions_table.php
