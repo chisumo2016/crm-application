@@ -73,3 +73,6 @@
     https://livewire.laravel.com/docs/events#dispatching-events
 
 # REGISTER STEPS LIVEWIRE WIZARD 
+    UII
+# REGISTER  VALIDATIONS  FOR BUSINESS /USER 
+    Validation each steps 
