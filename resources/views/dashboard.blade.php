@@ -24,6 +24,8 @@
                 @can('test4')
                     test4
                 @endcan
+
+                @livewire('business.invite')
             </div>
         </div>
     </div>

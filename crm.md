@@ -145,3 +145,14 @@
         //dd($this->roles);
 
 #  PLANS AND PERMISSIONS
+
+    
+# MAIL INVITE USER , FORGOT PASSWORD
+    php artiisan make:mail  InviteUser
+    php artisan make:livewire business.invite
+
+    modified:   resources/views/dashboard.blade.php
+    app/Livewire/Business/Invite.php
+	app/Mail/InviteUser.php
+	resources/views/livewire/business/invite.blade.php
+	resources/views/mails/
