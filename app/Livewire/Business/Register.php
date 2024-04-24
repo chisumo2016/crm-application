@@ -10,10 +10,14 @@ use DateTime;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
+use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
+
 
 class Register extends Component
 {
     use PasswordValidationRules;
+    use UsesSpamProtection;
 
 
     public  $plans;
@@ -23,8 +27,11 @@ class Register extends Component
     public $business = []; //name and industry
     public $user = []; //name and industry
 
+    public HoneypotData $extraFields;
+
 
     public function mount(){
+        $this->extraFields = new HoneypotData();
         $this->plans = Plan::all();
     }
     #[On('plan-selected')]
@@ -48,7 +55,7 @@ class Register extends Component
 
 
         }elseif ($step == 'submit'){
-
+            $this->protectAgainstSpam(); // if is spam, will abort the request
             //dd($this->selectedPlan['trial_period_days']);
 
             $validatedBusiness = $this->validate([

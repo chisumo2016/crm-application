@@ -90,6 +90,7 @@
                     <!-- Step 3: Review and Submit -->
                     <div x-show="step === 3">
                         <h2 class="text-2xl font-semibold mb-4">Step 3: User details: </h2>
+                        <x-honeypot livewire-model="extraFields" />
                        <div>
                            <div class="mb-3">
                                <x-label for="name" value="{{ __('Name') }}" />

@@ -160,3 +160,15 @@
 # LIVEWIRE  ALERT
     mail is sent
     https://github.com/jantinnerezo/livewire-alert
+
+# HONEYPOT WITH JETSTREAM , LIVEWIRE
+    https://github.com/spatie/laravel-honeypot
+    - Add middleware  in register
+
+        modified:   app/Actions/Fortify/CreateNewUser.php
+        modified:   app/Livewire/Business/Register.php
+        modified:   composer.json
+        modified:   composer.lock
+        modified:   crm.md
+        modified:   resources/views/auth/register.blade.php
+        modified:   resources/views/livewire/business/register.blade.php
