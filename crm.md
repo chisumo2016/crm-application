@@ -156,3 +156,7 @@
 	app/Mail/InviteUser.php
 	resources/views/livewire/business/invite.blade.php
 	resources/views/mails/
+
+# LIVEWIRE  ALERT
+    mail is sent
+    https://github.com/jantinnerezo/livewire-alert
