@@ -8,10 +8,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-               test
                 {{--  Check Permission  --}}
                 @can('test')
-                    test
+                    test1
                 @endcan
 
                 @can('test2')
@@ -20,6 +19,10 @@
 
                 @can('test3')
                     test3
+                @endcan
+
+                @can('test4')
+                    test4
                 @endcan
             </div>
         </div>

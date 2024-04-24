@@ -143,3 +143,5 @@
         //dd($this->roles->map->permissions->flatten()->pluck('name')->unique());
         //dd($this->roles->map->permissions);
         //dd($this->roles);
+
+#  PLANS AND PERMISSIONS

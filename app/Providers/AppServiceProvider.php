@@ -22,7 +22,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::before(function (User $user, $permission) {
-            return $user->permissions()->contains($permission);
+
+            if($user->businesses[0]->plan->permissions->flatten()->pluck('name')->unique()->contains($permission)) {
+                return $user->permissions()->contains($permission);
+
+            }else{
+                //abort('403', 'This feature not available');
+                return  false;
+            }
+
         });
     }
 }
+//return $this->roles->map->permissions->flatten()->pluck('name')->unique();
