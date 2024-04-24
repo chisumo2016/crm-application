@@ -11,9 +11,7 @@ class Permission extends Model
     use HasFactory;
     protected $fillable  = [
         'name',
-        /*'permission_id',
-        'role_id',
-        'plan_id',*/
+
     ];
 
     public function roles():BelongsToMany

@@ -15,14 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
 
-            $table->foreignId('business_id')->constrained()->onDelete('cascade');
+            $table->foreignId('business_id');
             $table->timestamps();
         });
 
-        Schema::create('role_user', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('role_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+        /**PIVOT TABLE ***/
+       Schema::create('role_user', function (Blueprint $table) {
+           $table->id();
+            $table->foreignId('role_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
 

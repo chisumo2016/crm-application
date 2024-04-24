@@ -94,3 +94,52 @@
 	database/migrations/2024_04_23_161827_create_businesses_table.php
 	database/migrations/2024_04_23_183253_create_roles_table.php
 	database/migrations/2024_04_23_183343_create_permissions_table.php
+
+# ROLES PERMISSION
+    USERS
+    id      name    
+    1       John        
+    2       ben         
+
+    ROLES
+    id      name        business_id
+    1       admin           1
+
+    ROLE_USER
+    id      role_id  user_id
+    1           1        2
+
+
+    BUSINESS
+    id      name        plan_id
+    1       IT              2
+    2       CYBER           2
+
+      BUSINESS_USER
+    id     user_id        business_id
+    1       2                    2
+
+    PERMISSION
+    id      name  
+    1       Test1  
+    2       Test2 
+
+    PERMISSION_ROLE
+    id      role_id  permission_id
+    1           1        1
+    2           2        2
+
+    
+
+# ROLES AND  PERMISSION
+    1: check permission on blade ON PARTICULAR  USER
+         @can('test')
+                test
+          @endcan
+
+    user has roles()
+    Add authServiceProvider
+
+        //dd($this->roles->map->permissions->flatten()->pluck('name')->unique());
+        //dd($this->roles->map->permissions);
+        //dd($this->roles);

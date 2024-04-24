@@ -17,15 +17,15 @@ return new class extends Migration
             $table->string('industry');
             $table->timestamp('expire_at');
 
-            $table->foreignId('plan_id')->constrained()->onDelete('cascade');;
+            $table->foreignId('plan_id')->constrained();
             $table->timestamps();
         });
 
+        /**PIVOT TABLE ***/
         Schema::create('business_user', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('business_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id');
+            $table->foreignId('business_id');
             $table->timestamps();
         });
     }
