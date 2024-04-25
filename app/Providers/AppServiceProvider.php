@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Gate::before(function (User $user, $permission) {
 
-            if($user->businesses[0]->plan->permissions->flatten()->pluck('name')->unique()->contains($permission)) {
+            if($user->businesses->isNotEmpty() && $user->businesses[0]->plan->permissions->flatten()->pluck('name')->unique()->contains($permission)) {
                 return $user->permissions()->contains($permission);
 
             }else{

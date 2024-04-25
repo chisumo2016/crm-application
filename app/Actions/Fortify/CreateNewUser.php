@@ -41,7 +41,7 @@ class CreateNewUser implements CreatesNewUsers
     public function spamCheck()
     {
         try{
-                app(SpamProtection::class)->check(requuest()->all());
+                app(SpamProtection::class)->check(request()->all());
         }catch (SpamException){
             event(new SpamDetectedEvent(request()));
             abort(403, 'Spam detected');

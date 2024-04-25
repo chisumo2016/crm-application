@@ -18,7 +18,7 @@
                                         <div class="text-gray-600 mb-4">$ {{ $plan->price }}</div>
                                         <label for="plan3" class="flex items-center">
                                             <input
-                                                wire:model="selectedPlan.id"
+                                                wire:model.live="selectedPlan.id"
                                                 type="radio"
                                                 id="plan3"
                                                 value="{{ $plan->id }}"

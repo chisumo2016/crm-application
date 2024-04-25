@@ -172,3 +172,15 @@
         modified:   crm.md
         modified:   resources/views/auth/register.blade.php
         modified:   resources/views/livewire/business/register.blade.php
+
+# MIDDLEWARE TO SELECT BUSINESS
+    https://laravel.com/docs/11.x/middleware#main-content
+    php artisan make:middleware SelectBusiiness
+        modified:   app/Actions/Fortify/CreateNewUser.php
+        modified:   app/Livewire/Business/Register.php
+        modified:   app/Providers/AppServiceProvider.php
+        modified:   crm.md
+        modified:   resources/views/livewire/business/register.blade.php
+        modified:   routes/web.php
+    
+         app/Http/Middleware/
