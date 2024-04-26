@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Gate::before(function (User $user, $permission) {
             $business = Business::find(session('businessId'));
-
-            if($business->isNotEmpty() && $business->plan->permissions->flatten()->pluck('name')->unique()->contains($permission)) {
+                //$business->isNotEmpty() &&
+            if($business->plan->permissions->flatten()->pluck('name')->unique()->contains($permission)) {
                 return $user->permissions()->contains($permission);
 
             }else{

@@ -28,6 +28,8 @@
 
                 @livewire('business.invite')
                 @livewire('business.select',['showButton' => true])
+
+                {{ auth()->user()->roles->toJson() }}
             </div>
         </div>
     </div>

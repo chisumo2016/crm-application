@@ -209,6 +209,31 @@
     app/Livewire/Business/Select.php
 	resources/views/livewire/business/select.blade.php
 
+# GLOBAL SCOPE FOR BUSINESS
+    https://laravel.com/docs/11.x/eloquent#global-scopes
+    php artisan make:scope BusinessScope
+
+         modified:   app/Models/Role.php
+        modified:   app/Providers/AppServiceProvider.php
+        modified:   crm.md
+        modified:   resources/views/dashboard.blade.php
+        modified:   resources/views/livewire/business/select.blade.php
+
+        app/Models/Scopes/
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
 
 
 
