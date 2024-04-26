@@ -22,13 +22,33 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="h-screen flex" x-data="{sidebar:false}">
-            <div x-show="sidebar" class="hidden md:block md:1/5 lg:w-1/6">Side Bar</div>
+        <div class="h-screen flex" x-data="{sidebar:true , mobile:false}">
+            <div x-show="mobile" class="fixed md:hidden md:1/5 lg:w-1/6 h-screen w-full bg-white">
+                <a
+                    class="float-right cursor-pointer p-4"
+                    x-on:click="mobile = !mobile">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </a>
+                {{--  Mobile Menu--}}
+                @livewire('sidebar')
+            </div>
+            <div x-show="sidebar" class="hidden md:block md:1/5 lg:w-1/6">
+            {{--   Side Bar--}}
+                @livewire('sidebar')
+            </div>
 
             <div class="flex-grow min-h-screen bg-gray-100">
                 <div class="flex">
-                    <div class="hidden md:block p-5">
-                        <a class=" cursor-pointer" x-on:click="sidebar = !sidebar">
+                    <div class="p-5">
+                        <a class="hidden md:block cursor-pointer" x-on:click="sidebar = !sidebar">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </a>
+
+                        <a class="block md:hidden cursor-pointer" x-on:click="mobile = !mobile">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>

@@ -233,7 +233,16 @@
     - Add left bar to our appplicatiin
             modified:   resources/views/layouts/app.blade.php
 
+# MOBILE NAVIGATION MENU
+    php artisan make:livewire sidebar
+     app/Livewire/Sidebar.php
+	 resources/views/livewire/sidebar.blade.php
+    modified:   resources/views/layouts/app.blade.php
 
+# SUBMENU NAV LINKS USING ALPINE  JS
+        app/Livewire/Sidebar.php
+	resources/views/livewire/sidebar.blade.php
+    
 
 
 
