@@ -221,7 +221,17 @@
 
         app/Models/Scopes/
 
+# GIT REPOSIITORY PROJECT
+    - Add into github
 
+     Main   -  development
+        branch -  featured
+        release -
+        production -
+
+# LEFT  SIDEBAR RESPONSIVE  admin1234
+    - Add left bar to our appplicatiin
+            modified:   resources/views/layouts/app.blade.php
 
 
 
