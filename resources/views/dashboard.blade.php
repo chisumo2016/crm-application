@@ -27,6 +27,7 @@
                 @endcan
 
                 @livewire('business.invite')
+                @livewire('business.select',['showButton' => true])
             </div>
         </div>
     </div>

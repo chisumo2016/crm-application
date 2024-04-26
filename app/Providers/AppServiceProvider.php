@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Business;
 use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
@@ -22,8 +23,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::before(function (User $user, $permission) {
+            $business = Business::find(session('businessId'));
 
-            if($user->businesses->isNotEmpty() && $user->businesses[0]->plan->permissions->flatten()->pluck('name')->unique()->contains($permission)) {
+            if($business->isNotEmpty() && $business->plan->permissions->flatten()->pluck('name')->unique()->contains($permission)) {
                 return $user->permissions()->contains($permission);
 
             }else{

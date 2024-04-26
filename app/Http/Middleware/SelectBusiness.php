@@ -16,13 +16,25 @@ class SelectBusiness
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $businessCount = Auth::user()->businesses->count();
-        if ($businessCount == 1){
-            /*Add to Session**/
+        if ($request->session()->get('businessId')){
+
+
+        }else{
+            $businessCount = Auth::user()->businesses->count();
+            if ($businessCount == 1){
+                /*Add to Session**/
+                $request->session()->put('businessId', Auth::user()->businesses[0]->id);
+                return  redirect('/dashboard');
+            }
+            elseif ($businessCount == 0){
+                return  redirect('/?register=true');
+            }elseif ($businessCount > 1){
+                //Multiple business
+                return  redirect('/?selectBusiness=true');
+            }
         }
-        elseif ($businessCount == 0){
-            return  redirect('/?register=true');
-        }
+
         return $next($request);
     }
 }
+//return  redirect('/?register=true');

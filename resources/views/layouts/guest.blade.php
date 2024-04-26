@@ -40,6 +40,9 @@
         </footer>
         @livewire('business.register')
 
+        @if(auth()->check())
+            @livewire('business.select')
+        @endif
         @livewireScripts
     </body>
 </html>

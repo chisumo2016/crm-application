@@ -175,6 +175,7 @@
 
 # MIDDLEWARE TO SELECT BUSINESS
     https://laravel.com/docs/11.x/middleware#main-content
+     https://laravel.com/docs/11.x/middleware#defining-middleware   
     php artisan make:middleware SelectBusiiness
         modified:   app/Actions/Fortify/CreateNewUser.php
         modified:   app/Livewire/Business/Register.php
@@ -184,3 +185,60 @@
         modified:   routes/web.php
     
          app/Http/Middleware/
+
+# SESSION TOO SWITCH BUSINESS
+    https://laravel.com/docs/11.x/session#interacting-with-the-session
+    https://laravel.com/docs/11.x/session#storing-data
+
+    php artisan make:livewire business.select
+
+            if($user->businesses->isNotEmpty() && $user->businesses[0]->plan->permissions->flatten()->pluck('name')->unique()->contains($permission)) {
+                return $user->permissions()->contains($permission);
+
+            }else{
+                //abort('403', 'This feature not available');
+                return  false;
+            }
+
+    modified:   app/Http/Middleware/SelectBusiness.php
+	modified:   app/Providers/AppServiceProvider.php
+	modified:   crm.md
+	modified:   resources/views/dashboard.blade.php
+	modified:   resources/views/layouts/guest.blade.php
+
+    app/Livewire/Business/Select.php
+	resources/views/livewire/business/select.blade.php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
