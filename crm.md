@@ -242,6 +242,15 @@
 # SUBMENU NAV LINKS USING ALPINE  JS
         app/Livewire/Sidebar.php
 	resources/views/livewire/sidebar.blade.php
+
+# SECURITY SERVER SIDE VALIDATION
+    Register business validation
+    set session to business check first
+
+    modified:   app/Livewire/Business/Register.php
+	modified:   app/Livewire/Business/Select.php
+	modified:   crm.md
+     modified:   resources/views/livewire/business/register.blade.php
     
 
 

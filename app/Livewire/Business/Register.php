@@ -64,19 +64,23 @@ class Register extends Component
         }*/
     }
 
+    public  function validateBusiness()
+    {
+        $validatedBusiness = $this->validate([
+            'business.name' => 'required',
+            'business.industry' => 'required',
+        ]);
+    }
     public function nextStep($step)
     {
         //dd($step);
         if ($step == 3){
-            $validatedBusiness = $this->validate([
-                'business.name' => 'required',
-                'business.industry' => 'required',
-            ]);
+            /**Server validation*/
+            $this->validateBusiness();
 
         if (Auth::check()){
             //User is already authenticated
             $business = $this->addBusiness();
-
             Auth::user()->businesses()->attach($business->id);
 
             $this->redirectRoute('dashboard');
@@ -86,10 +90,8 @@ class Register extends Component
             $this->protectAgainstSpam(); // if is spam, will abort the request
             //dd($this->selectedPlan['trial_period_days']);
 
-            $validatedBusiness = $this->validate([
-                'business.name' => 'required',
-                'business.industry' => 'required',
-            ]);
+            /**Server validation*/
+            $this->validateBusiness();
 
             $validatedUser = $this->validate([
                 'user.name' => ['required', 'string', 'max:255'],

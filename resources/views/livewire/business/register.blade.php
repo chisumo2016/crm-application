@@ -43,14 +43,14 @@
                         <h2 class="text-2xl font-semibold mb-4">Step 2: Business Information</h2>
                         <div class="mb-4">
                             <div class="mb-3">
-                                <x-label for="business.name" value="{{ __('Industry:') }}" />
+                                <x-label for="business.name" value="{{ __('Business Name:') }}" />
                                 <x-input id="business.name" class="block mt-1 w-full" type="text" wire:model="business.name" />
                                 @error('business.name')
                                     <span class="text-red-500">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="mb-3">
-                            <x-label for="business.industry" value="{{ __('Status') }}" />
+                            <x-label for="business.industry" value="{{ __('Industry') }}" />
                             <x-select id="status" class="block mt-1 w-full" type="text" wire:model="business.industry">
                                 <option value="">Select</option>
                                 <option value="" disabled selected>Select your industry</option>
