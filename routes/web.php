@@ -4,6 +4,8 @@ use App\Http\Controllers\LeadController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\SelectBusiness;
+use  App\Livewire\Business\Roles;
+;
 
 
 Route::get('/', function () {
@@ -27,6 +29,7 @@ Route::middleware([
 
     })->name('dashboard');
 
+    Route::get('/roles', Roles::class);
     /*Leads Route**/
     Route::resource('leads', LeadController::class);
 

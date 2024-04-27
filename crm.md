@@ -251,10 +251,19 @@
 	modified:   app/Livewire/Business/Select.php
 	modified:   crm.md
      modified:   resources/views/livewire/business/register.blade.php
-    
 
-
-
+# CRUD LIVEWIRE FOR ROLES
+    https://livewire.laravel.com/docs/components#layout-files
+    - Roles for businness
+        php artisan make:livewire business.roles
+    - Livewire can be used as a page .
+    -Publishing the configuration file
+        php artisan livewire:publish --config
+    https://livewire.laravel.com/docs/pagination#basic-usage
+            modified:   routes/web.php
+            app/Livewire/Business/Roles.php
+	        config/livewire.php
+	        resources/views/livewire/business/roles.blade.php
 
 
 
