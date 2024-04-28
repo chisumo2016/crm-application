@@ -275,6 +275,13 @@
         modified:   resources/views/livewire/sidebar.blade.php
         modified:   routes/web.php
 
+# LOCALSTORAGE / PERSIST FOR ACTIVE LINK USING ALPINEJS
+    https://www.w3schools.com/jsref/prop_win_localstorage.asp
+    https://alpinejs.dev/plugins/persist
+      modified:   crm.md
+	modified:   resources/views/leads/edit.blade.php
+	modified:   resources/views/leads/index.blade.php
+	modified:   resources/views/livewire/sidebar.blade.php
 
 
 

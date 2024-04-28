@@ -4,7 +4,10 @@
     </div>
     <div class="flex flex-col p-2 gap-2">
         <a href="{{ route('dashboard') }}" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Dashbaord</a>
-        <div x-data="{open:false}" class="w-full">
+        <a href="{{ route('leads.index') }}" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Leads</a>
+        <div
+            x-data="{open:$persist(false).as('open-users')}"
+             class="w-full">
             <a x-on:click="open = !open" class="flex justify-between p-4 bg-slate-100 hover:bg-slate-200 rounded w-full">
                 <span>Users</span>
                 <svg
@@ -31,7 +34,9 @@
 {{--        <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>--}}
 {{--        <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>--}}
 
-        <div x-data="{open:false}" class="w-full">
+        <div
+            x-data="{open:$persist(false).as('open-settings')}"
+            class="w-full">
             <a x-on:click="open = !open" class="flex justify-between p-4 bg-slate-100 hover:bg-slate-200 rounded w-full">
                 <span>Settings</span>
                 <svg
@@ -49,8 +54,10 @@
             </a>
             <div x-show="open" class="flex flex-col">
                 {{--  submenu--}}
-                <a href="{{ route('business.roles') }}" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Role</a>
-                <a href="{{ route('business.invites') }}" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Invites Users</a>
+                <a href="{{ route('business.roles') }}" class="p-4 bg-slate-100 hover:bg-slate-200 rounded @if(request()->routeIs('business.roles'))  bg-slate-300 @else bg-slate-100 @endif">Role</a>
+                <a href="{{ route('business.invites') }}"
+                   class="p-4  hover:bg-slate-200 rounded @if(request()->routeIs('business.invites'))  bg-slate-300 @else bg-slate-100 @endif">Invites Users</a>
+                <a href="#" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Subscription</a>
             </div>
         </div>
 

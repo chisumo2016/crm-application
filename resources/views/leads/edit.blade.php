@@ -61,7 +61,7 @@
                     </div>
                     <div>
                         <x-label for="status" value="{{ __('Notes') }}"/>
-                        <x-textarea id="notes" name="notes" rows="4" class="block w-full mt-1" value="old('notes')" >value="{{old('notes') ??  $lead->notes }}"</x-textarea>
+                        <x-textarea id="notes" name="notes" rows="4" class="block w-full mt-1" value="old('notes')" >{{old('notes') ??  $lead->notes }}</x-textarea>
 
                         @error('notes')
                         <div class="text-red-500">{{ $message }}</div>
