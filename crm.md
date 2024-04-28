@@ -265,6 +265,16 @@
 	        config/livewire.php
 	        resources/views/livewire/business/roles.blade.php
 
+# SIDEBAR  LINKS /SELECT BUSINESS CHANGES
+       modified:   app/Livewire/Business/Select.php
+        modified:   crm.md
+        modified:   resources/views/dashboard.blade.php
+        modified:   resources/views/layouts/app.blade.php
+        modified:   resources/views/livewire/business/invite.blade.php
+        modified:   resources/views/livewire/business/select.blade.php
+        modified:   resources/views/livewire/sidebar.blade.php
+        modified:   routes/web.php
+
 
 
 

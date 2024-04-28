@@ -1,9 +1,8 @@
 <div>
         @if($showButton && auth()->user()->businesses->count() > 1)
-            <x-button wire:click="change">Change Business</x-button>
+            <a wire:click="change" class="cursor-pointer">Change Business : {{ session('businessName') }}</a>
         @endif
-
-            {{ session('businessId') }}
+{{--            {{ session('businessId') }}--}}
     <x-dialog-modal wire:model="showSelection">
         <x-slot name="title">Select Business</x-slot>
 

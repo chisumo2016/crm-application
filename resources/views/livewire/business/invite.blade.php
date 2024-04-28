@@ -1,4 +1,4 @@
-<div>
+<div class="p-6">
    <x-button wire:click="invite">Invite Users</x-button>
 
     <x-dialog-modal wire:model="inviteModal">

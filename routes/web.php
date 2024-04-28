@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Middleware\SelectBusiness;
 use  App\Livewire\Business\Roles;
+use  App\Livewire\Business\Invite;
 ;
 
 
@@ -29,8 +30,11 @@ Route::middleware([
 
     })->name('dashboard');
 
-    Route::get('/roles', Roles::class);
+    Route::get('/roles', Roles::class)->name('business.roles');
+    Route::get('/invites', Invite::class)->name('business.invites');
     /*Leads Route**/
     Route::resource('leads', LeadController::class);
 
 });
+
+//@livewire('business.invite')

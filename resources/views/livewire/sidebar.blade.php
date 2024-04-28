@@ -1,6 +1,9 @@
 <div>
-    <div class="w-full bg-gray-200 p-2">CRM</div>
+    <div class="w-full bg-gray-200 p-5">
+        @livewire('business.select',['showButton' => true])
+    </div>
     <div class="flex flex-col p-2 gap-2">
+        <a href="{{ route('dashboard') }}" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Dashbaord</a>
         <div x-data="{open:false}" class="w-full">
             <a x-on:click="open = !open" class="flex justify-between p-4 bg-slate-100 hover:bg-slate-200 rounded w-full">
                 <span>Users</span>
@@ -19,14 +22,14 @@
             </a>
             <div x-show="open" class="flex flex-col">
                 {{--  submenu--}}
-                <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
+
                 <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
                 <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
             </div>
         </div>
-        <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
-        <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
-        <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
+{{--        <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>--}}
+{{--        <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>--}}
+{{--        <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>--}}
 
         <div x-data="{open:false}" class="w-full">
             <a x-on:click="open = !open" class="flex justify-between p-4 bg-slate-100 hover:bg-slate-200 rounded w-full">
@@ -46,9 +49,8 @@
             </a>
             <div x-show="open" class="flex flex-col">
                 {{--  submenu--}}
-                <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
-                <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
-                <a href="" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Link</a>
+                <a href="{{ route('business.roles') }}" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Role</a>
+                <a href="{{ route('business.invites') }}" class="p-4 bg-slate-100 hover:bg-slate-200 rounded">Invites Users</a>
             </div>
         </div>
 
